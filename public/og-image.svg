@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#paint0_linear_1_2)"/>
+  <rect x="150" y="150" width="900" height="100" rx="8" fill="white" fill-opacity="0.9"/>
+  <rect x="150" y="270" width="900" height="100" rx="8" fill="white" fill-opacity="0.7"/>
+  <rect x="150" y="390" width="600" height="100" rx="8" fill="white" fill-opacity="0.5"/>
+  <circle cx="900" cy="440" r="50" fill="white" fill-opacity="0.8"/>
+  <text x="600" y="100" font-family="Arial" font-size="60" font-weight="bold" fill="white" text-anchor="middle">Scribe</text>
+  <text x="600" y="550" font-family="Arial" font-size="32" fill="white" text-anchor="middle">AI-powered Markdown Notes</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>
