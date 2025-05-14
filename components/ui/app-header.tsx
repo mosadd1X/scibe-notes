@@ -11,13 +11,13 @@ import {
   FileText,
   HelpCircle,
   MoreVertical,
-  Keyboard,
 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { NoteActionsMenu } from '@/components/notes/note-actions-menu'
-import { KeyboardShortcuts } from '@/components/ui/keyboard-shortcuts'
+import { SettingsDialog } from '@/components/ui/settings-dialog'
+import { HelpDialog } from '@/components/ui/help-dialog'
 
 import { Separator } from '@/components/ui/separator'
 import {
@@ -115,28 +115,23 @@ export function AppHeader({
             </CommandGroup>
             <CommandSeparator />
             <CommandGroup heading="Settings">
-              <CommandItem>
+              <CommandItem
+                onClick={() => {
+                  setIsCommandOpen(false)
+                  // Open settings dialog
+                  document.getElementById('settings-dialog-trigger')?.click()
+                }}
+              >
                 <Settings className="mr-2 h-4 w-4" />
                 <span>Settings</span>
               </CommandItem>
               <CommandItem
                 onClick={() => {
                   setIsCommandOpen(false)
-                  // Trigger keyboard shortcut dialog
-                  const event = new KeyboardEvent('keydown', {
-                    key: 'k',
-                    ctrlKey: true,
-                    shiftKey: true,
-                    bubbles: true,
-                  })
-                  document.dispatchEvent(event)
+                  // Open help dialog
+                  document.getElementById('help-dialog-trigger')?.click()
                 }}
               >
-                <Keyboard className="mr-2 h-4 w-4" />
-                <span>Keyboard Shortcuts</span>
-                <CommandShortcut>Ctrl+Shift+K</CommandShortcut>
-              </CommandItem>
-              <CommandItem>
                 <HelpCircle className="mr-2 h-4 w-4" />
                 <span>Help</span>
               </CommandItem>
@@ -151,7 +146,8 @@ export function AppHeader({
 
         <div className="flex items-center gap-2">
           <div className="hidden md:flex items-center">
-            <KeyboardShortcuts />
+            <SettingsDialog />
+            <HelpDialog />
             <Separator orientation="vertical" className="h-6 mx-2" />
           </div>
           <NoteActionsMenu>

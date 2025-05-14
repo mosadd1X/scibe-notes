@@ -411,10 +411,7 @@ export function MarkdownEditor({
         newCursorPos = end + 2 + (selectedText ? 0 : 5)
         break
       case 'hr':
-        newText =
-          value.substring(0, start) +
-          '\n---\n' +
-          value.substring(end)
+        newText = value.substring(0, start) + '\n---\n' + value.substring(end)
         newCursorPos = end + 5
         break
       case 'table':
@@ -441,6 +438,7 @@ export function MarkdownEditor({
           value.substring(end)
         newCursorPos = end + 4 + (selectedText ? 0 : 4)
         break
+    }
 
     onChange(newText)
 
